@@ -26,3 +26,23 @@ class Car:
 
 car1 = Car("BMW", 120)
 print(car1.info())
+
+
+class BankAccount:
+    def __init__(self, owner, balance):
+        self.owner = owner
+        self.balance = balance
+
+    def deposit(self, amount):
+        self.balance += amount
+        return f"Вы внесли {amount}. Текущий баланс: {self.balance}"
+
+    def withdraw(self, amount):
+        self.balance -= amount
+        return f"Вы сняли {amount}. Текущий баланс: {self.balance}"
+
+
+account1 = BankAccount("Alice", 1000)
+print(account1.deposit(500))
+print(account1.withdraw(200))
+print(account1.withdraw(1000))
