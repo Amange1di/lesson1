@@ -83,14 +83,13 @@ class Payment(ABC):
 
 class CardPayment(Payment):
     def pay(self, amount):
-        print(f"Оплата {amount} ")
-        return True
+        print(f"Оплата {amount} CardPayment  ")
 
 
 class CryptoPayment(Payment):
     def pay(self, amount):
-        print(f"Оплата {amount}")
-        return True
+        print(f"Оплата {amount} CryptoPayment")
+
 
 
 def checkout(cart, payment_method):
@@ -109,14 +108,14 @@ def checkout(cart, payment_method):
         cart.clear()
 
 
-user1 = User(1, "Aman", 1000)
+user1 = User(1, "Aman", 1000000)
 print(f"Пользователь: {user1.name}, Баланс: {user1.balance}")
 user1.add_balance(450)
 print(user1.balance)
 
 
 catalog = [
-    Electronics(1, "Смартфон", 50000, 12),
+    Electronics(1, "Смартфон", 5000, 12),
     Electronics(2, "Ноутбук", 90000, 24),
     Clothing(3, "Футболка", 1500, "L"),
     Clothing(4, "Джинсы", 3500, "M"),
