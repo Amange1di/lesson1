@@ -104,7 +104,7 @@ def checkout(cart, payment_method):
         return
 
     if payment_method.pay(total):
-        print("Оплата успешна ✅")
+        print("Оплата успешна ")
         cart.clear()
 
 
