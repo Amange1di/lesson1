@@ -173,7 +173,7 @@ class LibraryRepository:
                 FROM users u
                 JOIN borrow_records br ON br.user_id = u.id
                 GROUP BY u.id, u.name
-                HAVING COUNT(br.id) > (
+                HAVING COUNT(br.id) >= (
                     SELECT AVG(user_borrows)
                     FROM (
                         SELECT COUNT(*) AS user_borrows
